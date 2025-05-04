@@ -1,0 +1,81 @@
+:root {
+    --color-primary:    #0f0f0f;
+    --color-secondary:  #1a1a1a;
+    --color-accent1:    #ff0055;
+    --color-accent2:    #00fff7;
+    --color-lime:       #aaff00;
+    --color-text-light: #e0e0e0;
+    --color-text-neon:  #ffffff;
+    --color-error:      #ff2c2c;
+}
+
+/* Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide-in from left */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide-in from right */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Pulse button */
+@keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(255,0,85,0.7); }
+    70%  { box-shadow: 0 0 0 10px rgba(255,0,85,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,0,85,0); }
+}
+
+/* Pan background */
+@keyframes pan { from { background-position: 0 0; } to { background-position: -1200px 0; } }
+
+/* Apply animations */
+[data-aos="fade-up"]    { animation: fadeIn 0.8s ease-out forwards; }
+[data-aos="fade-left"]  { animation: slideInLeft 0.8s ease-out forwards; }
+[data-aos="fade-right"] { animation: slideInRight 0.8s ease-out forwards; }
+
+/* Delays */
+[data-aos-delay="100"] { animation-delay: 0.1s; }
+[data-aos-delay="200"] { animation-delay: 0.2s; }
+
+/* Glow button */
+.glow-button {
+    box-shadow: 0 0 15px rgba(255,0,85,0.5);
+    transition: box-shadow 0.3s ease;
+}
+.glow-button:hover {
+    box-shadow: 0 0 25px rgba(0,255,247,0.8);
+}
+
+/* Pulse effect */
+.pulse-button:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* Hover glow */
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(139,92,246,0.5);
+}
+
+/* Play button */
+.play-button {
+    transition: all 0.3s ease;
+}
+.play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 5px rgba(139,92,246,0.3);
+}
+
+/* Slow pan */
+.animate-pan-slow { animation: pan 120s linear infinite; }
